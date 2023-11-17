@@ -12,28 +12,28 @@ const url = "https://6555dc0584b36e3a431e8028.mockapi.io";
 addPerfumeForm.addEventListener('submit', async (e) => {
     e.preventDefault()
     try {
-        const addProduct = {
-            name: name.value,
-            brand: brand.value,
-            size:size.value,
-            rate:rate.value,
-            reviews:reviews.value,
-            price: price.value,
-            image:image.value,
-        }
+    const addProduct = {
+        name: name.value,
+        brand: brand.value,
+        size: parseInt(size.value), // Convert size to number
+        price: parseFloat(price.value), // Use the converted price value
+        image: image.value,
+    };
     console.log('submitted');
+
         const response = await fetch(url+'/perfumes', {
           method: "POST", // or 'PUT'
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(addPerfumeForm),
+          body: JSON.stringify(addProduct),
         });
         console.log(response.status);
+
         const result = await response.json();
         console.log(result);
-        fetchedProducts()
+
     } catch (error) {
         console.log(error);
     }
-})
+});
