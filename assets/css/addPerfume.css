@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
 *{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Agbalumo;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -10,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url("/assets/technology-abstract-background-with-particle-lines.jpg");
+    background-image: url("/assets/Group+154.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
