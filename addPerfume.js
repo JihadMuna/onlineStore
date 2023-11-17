@@ -22,12 +22,12 @@ addPerfumeForm.addEventListener('submit', async (e) => {
             image:image.value,
         }
     console.log('submitted');
-        const response = await fetch(url+'/shoes', {
+        const response = await fetch(url+'/perfumes', {
           method: "POST", // or 'PUT'
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(addProduct),
+          body: JSON.stringify(addPerfumeForm),
         });
         console.log(response.status);
         const result = await response.json();
