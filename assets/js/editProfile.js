@@ -1,26 +1,32 @@
 
+import { getUser , updateUser} from "./getterAndSetter.js"; 
 
-document.addEventListener('DOMContentLoaded', function () {
+const user = getUser();
+console.log(user);
+const username = document.getElementById('username');
+const password = document.getElementById('password');
+const age =document.getElementById('age');
+const gender = document.getElementById('gender');
+const phoneNumber = document.getElementById('phoneNumber');
+const img = document.getElementById('profileImg');
+
+username.placeholder = user.username;
+age.placeholder = user.age;
+gender.placeholder = user.gender;
+phoneNumber.placeholder = user.phonenumber;
+img.placeholder = user.img;
+
     const editProfileForm = document.getElementById('editProfileForm');
-    const updateButton = document.getElementById('login');
-    const data = getUserInfo();
+  
     editProfileForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        const age = parseInt(document.getElementById('age').value);
-        const gender = document.getElementById('gender').value;
-        const phoneNumber = document.getElementById('phoneNumber').value;
-
-        const userId = 1;
-       
-        const payload = {  ...data,
-            username: username,
-            password: password,
-            age: age,
-            gender: gender,
-            phoneNumber: phoneNumber,
+        const userId = user.id;
+        
+        const payload = {...user,
+            username: username.value,
+            password: password.value,
+            age: age.value
         };
  
 
@@ -38,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return response.json();
             })
             .then(data => {
+                updateUser(updateUser);
                 console.log(data);
                 alert('Profile updated successfully!');
             })
@@ -45,20 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.error('Profile update failed:', error.message);
                 alert('Profile update failed. Please try again.');
             });
-    });
-});
+     });
 
-async function getUserInfo(){
-    try {
-        const response = await fetch("https://6555db6984b36e3a431e7e7b.mockapi.io/users/1");
-        if (!response.ok) {
-            throw new Error('Failed to fetch users.');
-        }
 
-       const data = await response.json();
-      
-return data;
-    } catch (error) {
-        console.error('Login failed:', error.message);
-    }
-} 
+

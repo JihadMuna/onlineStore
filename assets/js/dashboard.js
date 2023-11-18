@@ -1,12 +1,11 @@
 
 import { createCards } from '../js/createCards.js';
 // import { addToCart ,updateCartCount  } from '../js/cart.js';
-// import { getAllFlight , getUser , updateFlights, updateUser } from "./getterAndSetter.js";
+import { getUser } from "./getterAndSetter.js";
 
+const user = getUser();
+console.log(user);
 
-    // const cart = JSON.parse(localStorage.getItem('carts'));
-    // const flights = getAllFlight();
-    // const user = getUser();
     const url = "https://6555dc0584b36e3a431e8028.mockapi.io";
 
     const perfumeList = document.getElementById("list");
@@ -32,17 +31,23 @@ import { createCards } from '../js/createCards.js';
 
     export function displayPerfume(items) {
         perfumeList.innerHTML = "";
-
-        // for (let index = 0; index < 1; index++) {
-            
-        //     createCards(false , items[index] , index);
-            
-        // }
         items.forEach((perfume, index) => {
 
-              createCards(false , perfume , index);
+              createCards(false , perfume , index , user.isAdmin
+                );
         
         });
+        const cards = document.querySelectorAll(".card");
+        console.log(cards);
+           cards.forEach(card => {
+            card.addEventListener('click', (e) => {
+             e.preventDefault();
+             const cardId = card.id.slice(4);
+             console.log(cardId);
+             
+            }
+              );
+      });
     }
 
 //     document.addEventListener("DOMContentLoaded", function() {
@@ -62,6 +67,13 @@ import { createCards } from '../js/createCards.js';
   
 
   document.addEventListener("DOMContentLoaded", function() {
+    
+        // Attach click event listeners to each card
+      
+   
+      
+    
+
       const addToCartButtons = document.querySelectorAll(".addToCart");
        addToCartButtons.forEach((button, index) => {
         button.addEventListener("click", (e) => {
@@ -73,6 +85,8 @@ import { createCards } from '../js/createCards.js';
           location.href = "cart.html" ;
         });
       });
+
+      
     });
     
   if(document.querySelector("#showAll")){
