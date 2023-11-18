@@ -1,6 +1,6 @@
-// import { getUser } from "./getterAndSetter.js";
+import { getUser } from "./getterAndSetter.js";
 
-// const user = getUser();
+const user = getUser();
 
 function createHeader(){
    
@@ -121,22 +121,18 @@ function createHeader(){
     thirdItem.id = "thirdItem";
     
     const profileImg = document.createElement("img");
-    profileImg.src = "https://tse2.mm.bing.net/th?id=OIP.NqY3rNMnx2NXYo3KJfg43gHaHa&pid=Api&P=0&h=180";
+    profileImg.src = user.img;
     profileImg.style.width = "45px";
     profileImg.style.height = "45px";
     profileImg.style.borderRadius = "25px";
     profileImg.style.marginRight = "10px";
     
     const userName = document.createElement("span");
-    userName.textContent = "john";
+    userName.textContent = user.username;
     userName.style.fontSize = "14px";
     userName.style.fontWeight = "550";
     userName.style.color = "#fff";
-    const options = {
-        Edit_Profile: "",
-        Settings: "",
-        Logout: ""
-    };
+   
     const dropdownStyles = {
         display: "none",
         position: "absolute",
@@ -159,16 +155,30 @@ function createHeader(){
     text-decoration: none;
     display: block;
     `;
-    options.forEach((optionText) => {
-        const option = document.createElement("option");
-        const link = document.createElement("a");
-        link.href = ""
-        option.className ="option";
-        option.value = optionText.toLowerCase().replace(/\s+/g, "-"); 
-        option.textContent = optionText;
-        option.style.cssText = linkStyles;
-        selectDropdown.appendChild(option);
-    });
+  
+    const option = document.createElement("option");
+    const link = document.createElement("a");
+    link.href = "editProfile.html";
+    option.textContent = "Edit Profile";
+    option.className ="option";
+    option.style.cssText = linkStyles;
+    
+    selectDropdown.appendChild(option);
+
+    option.addEventListener('click' , (e) =>{
+        e.preventDefault();
+        location.href = "editProfile.html";
+    })
+ 
+    // const option2 = document.createElement("option");
+    // const link2 = document.createElement("a");
+    // link2.href = "#";
+    // option.className ="option";
+    // option.textContent = "Logout" ;
+    // option.style.cssText = linkStyles;
+    // selectDropdown.appendChild(option2);
+
+    
     
     const userDropdownOptions = document.querySelectorAll("#userDropdown option");
     
