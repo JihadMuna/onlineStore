@@ -10,14 +10,120 @@ body{
     margin-top: 0;
 }
 
-#mainHeader{
+
+#header{
+    width: 1440px;
+    height: 87px;
+    background-color: black;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: black;
-    width: 100%;
-    height: 80px;
+    justify-content: space-between;
+    padding: 21px 104px;
 }
+
+
+#firstItem , #thirdItem , #secondItem{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.logoPic{
+    width: 160px;
+    margin-right: 25px;
+}
+
+#logo{
+    width: 160px;
+    height: 110.81px;
+}
+
+.button-sec{
+    margin-top: 20px;
+}
+
+#likeButton{
+    width: 48px;
+    height: 48px;
+    margin-right: 16px ;
+    border: 1px solid #8DD3BB;
+    padding: 4px 4px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+.addToCart{
+    width: 536px;
+    height: 48px;
+    border: 1px solid #8DD3BB;
+    background-color: #8DD3BB;
+    color: #112211;
+    font-size: 14px;
+    padding: 4px 4px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+#background{
+    position: relative;
+    width: 1440px;
+    height: 1000px;
+    margin-bottom: 30ex;
+    background-image: url('../images/Group+154.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+img{
+    width: 1440px;
+    height: 537px;
+    position: relative;
+}
+
+#emptyBox{
+    height: 280px;
+    padding: 32px 24px;
+    background-color: #fff;
+    border-radius: 16px;
+    position: absolute;
+    top: 55ex;
+    left: 5em;
+}
+
+#question{
+    color: #112211;
+    font-size: 20px;
+    margin-bottom: 25px;
+    margin-left: 32px;
+}
+
+#showAll , #addButton{
+    position: relative;
+    width: 230px;
+    height: 48px;
+    border: 1px solid #fff;
+    padding: 4px 4px;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #8DD3BB;
+    margin-left: 24px;
+  
+  }
+
+  #buttonSec{
+display: flex;
+flex-direction: row;
+  }
+
+  #addIcon, #ticketButton{
+    font-size: 18px;
+    color: #FAFBFC;
+    margin-right: 5px;
+  }
+
+  #dropdownContainer:hover  #userDropdown {
+    display: block;
+  }
+
 
 .container {
     max-width: 800px;

@@ -170,15 +170,18 @@ function createHeader(){
         location.href = "editProfile.html";
     })
  
-    // const option2 = document.createElement("option");
-    // const link2 = document.createElement("a");
-    // link2.href = "#";
-    // option.className ="option";
-    // option.textContent = "Logout" ;
-    // option.style.cssText = linkStyles;
-    // selectDropdown.appendChild(option2);
+    const option2 = document.createElement("option");
+    const link2 = document.createElement("a");
+    link2.href = "#";
+    option2.className ="option";
+    option2.textContent = "Logout" ;
+    option2.style.cssText = linkStyles;
+    selectDropdown.appendChild(option2);
 
-    
+    option2.addEventListener('click' , (e) =>{
+        e.preventDefault();
+        location.href = "index.html";
+    })
     
     const userDropdownOptions = document.querySelectorAll("#userDropdown option");
     
@@ -213,17 +216,23 @@ function createHeader(){
 
     middleSec.appendChild(logo);
 
-
-    linkFirstItem.appendChild(flightIcon);
-    linkFirstItem.appendChild(findFlightSpan);
-
-    linkFourthItem.appendChild(cartCountSpan);
-    linkFourthItem.appendChild(cartIcon);
-    linkFourthItem.appendChild(cartSpan);
-   
-    firstItem.appendChild(linkFirstItem);
-    forthItem.appendChild(linkFourthItem);
-   
+    if(!user.isAdmin){
+        linkFirstItem.appendChild(flightIcon);
+        linkFirstItem.appendChild(findFlightSpan);
+    
+        linkFourthItem.appendChild(cartCountSpan);
+        linkFourthItem.appendChild(cartIcon);
+        linkFourthItem.appendChild(cartSpan);
+       
+        firstItem.appendChild(linkFirstItem);
+        forthItem.appendChild(linkFourthItem);
+    }
+  
+    else{
+        favoriteSpan.textContent = "Add Perfume";
+        linkSecondItem.href = "addPerfume.html";
+        favIcon.className = "fa fa-plus";
+    }
     linkSecondItem.appendChild(favIcon);
     linkSecondItem.appendChild(favoriteSpan);
 
