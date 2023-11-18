@@ -7,7 +7,6 @@
 body{
     position: relative;
     height: 100vh;
-    margin-top: 0;
 }
 
 #mainHeader{
@@ -20,7 +19,6 @@ body{
 }
 
 .container {
-    max-width: 800px;
     margin: 40px ;
 }
 
@@ -40,12 +38,12 @@ body{
 
 .details h2 {
   font-weight: bolder;
-  font-size: 40px;
+  font-size: 45px;
   padding: 20px 0;
 }
 
 .details h3 {
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 200;
     background-color: black;
     color: #ccc;
@@ -54,5 +52,14 @@ body{
 
 .details p {
     font-size: x-large;
-    padding: 5px 0;
+    padding: 10px 0;
 }
+
+#perfumePrice {
+    font-weight: bolder;
+    color: red;
+}
+
+.checked {
+    color: orange;
+  }
