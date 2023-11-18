@@ -1,25 +1,38 @@
-
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 body{
     background-color: #FAFBFC;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-#header{
-    width: 1440px;
-    height: 87px;
-    background-color: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 21px 104px;
-    /* opacity: 0.1; */
-    /* margin-bottom: 50px; */
+
+#background{
+    position: relative;
+    height: 100vh;
+    margin-bottom: 30ex;
+    background-image: url('../images/Group+154.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
+#mainHeader{
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.logoPic{
+    width: 200px;
+    height: 50px;
+}
 
 #firstItem , #thirdItem , #secondItem{
 display: flex;
@@ -37,15 +50,6 @@ justify-content: center;
     margin-bottom: 20px;
 }
 
-.logoPic{
-    width: 160px;
-    margin-right: 25px;
-}
-
-#logo{
-    width: 160px;
-    height: 110.81px;
-}
 .reviews-line{
     width: 281px;
     height: 32px;
@@ -87,11 +91,6 @@ justify-content: center;
 #check{
     /* margin-bottom: 10px; */
 }
-.flight-details{
-  border-bottom: 0.5px solid #D9D9D9;
-  width: 600px;
-
-}
 
 .button-sec{
     margin-top: 20px;
@@ -118,16 +117,6 @@ justify-content: center;
     font-weight: 600;
 }
 
-#background{
-    position: relative;
-    width: 1440px;
-    height: 1000px;
-    margin-bottom: 30ex;
-    background-image: url('../images/Group+154.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 img{
     width: 1440px;
     height: 537px;
