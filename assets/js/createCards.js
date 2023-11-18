@@ -1,6 +1,6 @@
 
 
-export function createCards(isCart , arr  , index){
+export function createCards(isCart , arr  , index ,isAdmin){
     const list = document.querySelector("#list");
     const cardSec = document.createElement("section");
     const middleSec = document.createElement("section");
@@ -35,7 +35,8 @@ export function createCards(isCart , arr  , index){
     increaseButton.id=index;
   
     const downSec = document.createElement("section");
-    const likeButton = document.createElement("button");
+    const deleteButton = document.createElement("button");
+    const editButton = document.createElement("button");
     const addToCartButton = document.createElement("button");
     const cancelButton = document.createElement("button");
     //================================================
@@ -62,8 +63,11 @@ export function createCards(isCart , arr  , index){
 
     
     downSec.className = "button-sec";
-    likeButton.id = "likeButton";
-    likeButton.className = "far fa-heart";
+    deleteButton.id = "deleteButton";
+    deleteButton.textContent= "X";
+    editButton.id = "editButton";
+    editButton.textContent= "Edit";
+    // deleteButton.className = "far fa-heart";
     cancelButton.textContent = "-";
     cancelButton.className = "cancelButton";
     cancelButton.id = index;
@@ -130,13 +134,13 @@ export function createCards(isCart , arr  , index){
 
     downSec.style.marginTop = "20px";
 
-    likeButton.style.width = "48px";
-    likeButton.style.height = "48px";
-    likeButton.style.marginRight = "16px";
-    likeButton.style.border = "1px solid #8DD3BB";
-    likeButton.style.padding = "4px 4px";
-    likeButton.style.borderRadius = "4px";
-    likeButton.style.color = "#4C4850";
+    deleteButton.style.width = "48px";
+    deleteButton.style.height = "48px";
+    deleteButton.style.marginRight = "16px";
+    deleteButton.style.border = "1px solid #8DD3BB";
+    deleteButton.style.padding = "4px 4px";
+    deleteButton.style.borderRadius = "4px";
+    deleteButton.style.color = "#4C4850";
    
     cancelButton.textContent = "-";
     cancelButton.className = "cancelButton";
@@ -151,6 +155,16 @@ export function createCards(isCart , arr  , index){
     addToCartButton.style.padding = "4px 4px";
     addToCartButton.style.borderRadius = "4px";
     addToCartButton.style.fontWeight = "600";
+
+    editButton.style.width = "100px";
+    editButton.style.height = "48px";
+    editButton.style.border = "1px solid #8DD3BB";
+    editButton.style.backgroundColor = "#8DD3BB";
+    editButton.style.color = "#112211";
+    editButton.style.fontSize = "14px";
+    editButton.style.padding = "4px 4px";
+    editButton.style.borderRadius = "4px";
+    editButton.style.fontWeight = "600";
 
     cancelButton.style.width = "300px";
     cancelButton.style.height = "48px";
@@ -182,14 +196,19 @@ export function createCards(isCart , arr  , index){
     numPerfume.appendChild(numPerfumeInput);
     numPerfume.appendChild(increaseButton);
     
-
-    if(!isCart){
-        // downSec.appendChild(likeButton);
-        downSec.appendChild(addToCartButton);
+    if(isAdmin){
+       downSec.appendChild(deleteButton);
+       downSec.appendChild(editButton);
     }
     else{
-        downSec.appendChild(cancelButton); 
+        if(!isCart){
+            downSec.appendChild(addToCartButton);
+        }
+        else{
+            downSec.appendChild(cancelButton); 
+        }
     }
+   
 
     aboveSec.appendChild(logo);
     middleSec.appendChild(perfumeName);

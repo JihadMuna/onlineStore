@@ -1,3 +1,6 @@
+import { updateUser} from "./getterAndSetter.js"; 
+
+
 document.addEventListener('DOMContentLoaded', async function () {
     const loginForm = document.querySelector('form');
     const usernameInput = document.getElementById('username');
@@ -5,7 +8,6 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     loginForm.addEventListener('submit', async function (event) {
         event.preventDefault();
-
         const username = usernameInput.value;
         const password = passwordInput.value;
 
@@ -27,12 +29,13 @@ document.addEventListener('DOMContentLoaded', async function () {
 
             const data = await response.json();
             console.log(data);
-
+            
             const match = data.find(user => user.username === username && user.password === password);
-
+            
             if (match) {
+                updateUser(match);
                 alert('Login successful!');
-                window.location.href = "page2.html";
+                window.location.href = "dashboard.html";
             } else {
                 alert('Login failed. Please check your info.');
             }
