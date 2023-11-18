@@ -32,6 +32,12 @@ import { createCards } from '../js/createCards.js';
 
     export function displayPerfume(items) {
         perfumeList.innerHTML = "";
+
+        // for (let index = 0; index < 1; index++) {
+            
+        //     createCards(false , items[index] , index);
+            
+        // }
         items.forEach((perfume, index) => {
 
               createCards(false , perfume , index);

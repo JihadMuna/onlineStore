@@ -27,7 +27,7 @@ function createHeader(){
     middleSec.id = "middleSec";
     const logo =  document.createElement("img");
     logo.id = "LogoPic";
-    logo.src ="./assets/img/logo.png";
+    logo.src ="./assets/images/logo-02.png";
     logo.alt = "logo img";
     logo.style.width = "110.36px";
     logo.style.height = "36px";
@@ -42,7 +42,7 @@ function createHeader(){
     const linkFirstItem = document.createElement("a");
     linkFirstItem.href = "dashboard.html";
     linkFirstItem.style.textDecoration = "none";
-    linkFirstItem.style.color = "#112211";
+    linkFirstItem.style.color = "#FAFBFC";
     const flightIcon = document.createElement("i");
     flightIcon.className = "fa fa-plane";
     flightIcon.style.fontSize= "24px";
@@ -57,7 +57,7 @@ function createHeader(){
     const linkFourthItem = document.createElement("a");
     linkFourthItem.href = "cart.html";
     linkFourthItem.style.textDecoration = "none";
-    linkFourthItem.style.color = "#112211";
+    linkFourthItem.style.color = "#FAFBFC";
     linkFourthItem.id = "linkFourthItem";
     const forthItem = document.createElement("section");
     forthItem.id = "forthItem";
@@ -89,14 +89,14 @@ function createHeader(){
     const linkSecondItem = document.createElement("a");
     linkSecondItem.href = "myFlights.html";
     linkSecondItem.style.textDecoration = "none";
-    linkSecondItem.style.color = "#112211";
+    linkSecondItem.style.color = "#FAFBFC";
     linkSecondItem.id = "linkSecondItem";
 
     const secondItem = document.createElement("section");
     secondItem.id = "secondItem";
     secondItem.style.width="130px";
     secondItem.style.height = "24px";
-    secondItem.style.borderRight = "5px solid #112211";
+    secondItem.style.borderRight = "5px solid #FAFBFC";
     secondItem.style.marginRight = "32px";
 
     const favIcon = document.createElement("i");
@@ -108,25 +108,98 @@ function createHeader(){
     favoriteSpan.textContent = "My Tickets";
     favoriteSpan.style.fontSize = "14px";
     favoriteSpan.style.fontWeight = "500";
-
-
+    
+    //==================================
+    const dropdownContainer = document.createElement("section");
+    dropdownContainer.id = "dropdownContainer";
+    
+    const selectDropdown = document.createElement("section");
+    selectDropdown.id = "userDropdown";
+    selectDropdown.style.display = "none"; // Hide initially
+    
     const thirdItem = document.createElement("section");
     thirdItem.id = "thirdItem";
+    
     const profileImg = document.createElement("img");
-    // profileImg.src = user.profileImg;
     profileImg.src = "https://tse2.mm.bing.net/th?id=OIP.NqY3rNMnx2NXYo3KJfg43gHaHa&pid=Api&P=0&h=180";
-
     profileImg.style.width = "45px";
     profileImg.style.height = "45px";
     profileImg.style.borderRadius = "25px";
     profileImg.style.marginRight = "10px";
-
-
+    
     const userName = document.createElement("span");
-    // userName.textContent= user.name;
-    userName.textContent= "john";
+    userName.textContent = "john";
     userName.style.fontSize = "14px";
     userName.style.fontWeight = "550";
+    userName.style.color = "#fff";
+    const options = {
+        Edit_Profile: "",
+        Settings: "",
+        Logout: ""
+    };
+    const dropdownStyles = {
+        display: "none",
+        position: "absolute",
+        backgroundColor: "#f1f1f1",
+        minWidth: "160px",
+        boxShadow: "0px 8px 16px 0px rgba(0,0,0,0.2)",
+        zIndex: 1,
+    };
+    
+
+    selectDropdown.style.display = dropdownStyles.display;
+    selectDropdown.style.position = dropdownStyles.position;
+    selectDropdown.style.backgroundColor = dropdownStyles.backgroundColor;
+    selectDropdown.style.minWidth = dropdownStyles.minWidth;
+    selectDropdown.style.boxShadow = dropdownStyles.boxShadow;
+    selectDropdown.style.zIndex = dropdownStyles.zIndex;
+    const linkStyles = `
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    `;
+    options.forEach((optionText) => {
+        const option = document.createElement("option");
+        const link = document.createElement("a");
+        link.href = ""
+        option.className ="option";
+        option.value = optionText.toLowerCase().replace(/\s+/g, "-"); 
+        option.textContent = optionText;
+        option.style.cssText = linkStyles;
+        selectDropdown.appendChild(option);
+    });
+    
+    const userDropdownOptions = document.querySelectorAll("#userDropdown option");
+    
+
+
+    thirdItem.appendChild(profileImg);
+    thirdItem.appendChild(userName);
+    
+    dropdownContainer.addEventListener("mouseover", () => {
+        userDropdown.style.display = "block";
+    });
+    
+    dropdownContainer.addEventListener("mouseout", () => {
+        userDropdown.style.display = "none";
+    });
+    
+    // Add styles to userDropdown options on hover
+    userDropdownOptions.forEach((option) => {
+        option.addEventListener("mouseover", () => {
+            option.style.backgroundColor = "#ddd";
+        });
+    
+        option.addEventListener("mouseout", () => {
+            option.style.backgroundColor = "initial";
+        });
+    });
+
+   
+
+//==================================================================
+  
 
     middleSec.appendChild(logo);
 
@@ -149,10 +222,14 @@ function createHeader(){
     thirdItem.appendChild(profileImg);
     thirdItem.appendChild(userName);
 
+    dropdownContainer.appendChild(thirdItem);
+    dropdownContainer.appendChild(selectDropdown);
+
+
     rightSec.appendChild(firstItem);
     rightSec.appendChild(forthItem);
     leftSec.appendChild(secondItem);
-    leftSec.appendChild(thirdItem);
+    leftSec.appendChild(dropdownContainer);
 
     header.appendChild(rightSec);
     header.appendChild(middleSec);
