@@ -4,30 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/productPage.css">
     <title>Product Show</title>
 </head>
 
 <body>
-    <header id="mainHeader">
-        <img class="logoPic" src="images/logo-02.png" alt="logo-icon">
-    </header>
+    <section id = "background">
+        <header id="mainHeader">
+            <img class="logoPic" src="images/logo-02.png" alt="logo-icon">
+        </header>
 
-    <section class="container">
+    <section class="productContainer">
         <section class="perfume-details">
-            <img src="https://media.theperfumeshop.com/medias/zoom-front-1232847-420x420?context=bWFzdGVyfHByZC1pbWFnZXN8MzM5NzN8aW1hZ2UvanBlZ3xoZjUvaDc3Lzg4MjAzMDEzNjUyNzgvem9vbS1mcm9udC0xMjMyODQ3XzQyMHg0MjB8NGUwOGY3ZmIyZmEwMzZmYzQzNzJkZDg5ZGMzNmQ2MWE5NTQ1OTMyYmVlN2ViMGYxNjdjODg2MDMxMzZjNjhkZA"
-                alt="Perfume Image" id="perfumeImage">
+            <img src="" alt="Perfume Image" id="perfumeImage">
             <section class="details">
-                <h3 id="perfumeBrand">MOSCHINO</h3>
-                <h2 id="perfumeName">Toy 2</h2>
-                <p id="perfumeSize">100 <span>ml</span></p>
-                <p id="perfumeRate">4.1</p>
-                <p id="perfumePrice">39.99<span>$</span></p>
-                <p id="perfumeReviews"> "1": "Good!",
-                    "2": "perfect"</p>
+                <h3 id="perfumeBrand"></h3>
+                <h2 id="perfumeName"></h2>
+                <p id="perfumeSize"> <span>ml</span></p>
+                <p id="perfumePrice"><span>$</span></p>
+                <p id="perfumeRate"><span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span></p>
             </section>
         </section>
     </section>
+</section>
+
+     <!-- Main Container for Clients Review -->
+     <div class="reviewContainer">
+        <h2> Our Happy Clients: </h2>
+
+        <div class="reviewSection">
+            <div class="reviewItem">
+                <div class="top">
+                    <div class="clientImage">
+                        <img src="assets/images/th.jpg" alt="">
+                        <span>Mahmoud</span>
+                    </div>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <article>
+                    <p class="review">"I love this perfume store! The variety of scents is amazing, and the staff is
+                        super helpful. They helped me find the perfect fragrance for any occasion. The prices are
+                        reasonable, and the store has a welcoming atmosphere. Definitely my go-to place for perfumes!"
+                    </p>
+                    <p>Jan 01, 2023</p>
+                </article>
+            </div>
+
+            <!-- Clients Review-2 Section Starts from Here  -->
+            <div class="reviewItem">
+                <div class="top">
+                    <div class="clientImage">
+                        <img src="assets/images/th.jpg" alt="">
+                        <span>Hussein</span>
+                    </div>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <article>
+                    <p class="review">"I love this perfume store! The variety of scents is amazing, and the staff is
+                        super helpful. They helped me find the perfect fragrance for any occasion. The prices are
+                        reasonable, and the store has a welcoming atmosphere. Definitely my go-to place for perfumes!"
+                    </p>
+                    <p>Jan 01, 2023</p>
+                </article>
+            </div>
+
+            <!-- Clients Review-3 Section Starts from Here  -->
+            <div class="reviewItem">
+                <div class="top">
+                    <div class="clientImage">
+                        <img src="assets/images/th.jpg" alt="">
+                        <span>Ahmad</span>
+                    </div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        </div>
+                <article>
+                    <p class="review">"I love this perfume store! The variety of scents is amazing, and the staff is
+                        super helpful. They helped me find the perfect fragrance for any occasion. The prices are
+                        reasonable, and the store has a welcoming atmosphere. Definitely my go-to place for perfumes!"
+                    </p>jan 01, 2023</p>
+                </article>
+            </div>
+        </div>
+    </div>
 
     <script type="module" src="/assets/js/header.js"></script>
     <script type="module" src="assets/js/getterAndSetter.js"></script>
