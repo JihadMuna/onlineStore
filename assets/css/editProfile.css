@@ -1,135 +1,19 @@
-
-*{
-    box-sizing: border-box;
-    margin: 0;
+* {
+    font-family: Arial, Helvetica, sans-serif;
     padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-body{
-    background-color: #FAFBFC;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-#header{
-    width: 1440px;
-    height: 87px;
-    background-color: none;
+
+body {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    padding: 21px 104px;
-}
-
-
-#firstItem , #thirdItem , #secondItem{
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
-/* .card {
-    height: 250px;
-    width: 840px;
-    padding: 50px 10px;
-    display: flex;
-    background-color: rgba(255, 255, 255, 1);
-    border-radius: 12px;
-    margin-bottom: 20px;
-} */
-
-.logoPic{
-    width: 160px;
-    margin-right: 25px;
-}
-
-#logo{
-    width: 160px;
-    height: 110.81px;
-}
-
-.button-sec{
-    margin-top: 20px;
-}
-
-#likeButton{
-    width: 48px;
-    height: 48px;
-    margin-right: 16px ;
-    border: 1px solid #8DD3BB;
-    padding: 4px 4px;
-    border-radius: 4px;
-    background-color: #fff;
-}
-.addToCart{
-    width: 536px;
-    height: 48px;
-    border: 1px solid #8DD3BB;
-    background-color: #8DD3BB;
-    color: #112211;
-    font-size: 14px;
-    padding: 4px 4px;
-    border-radius: 4px;
-    font-weight: 600;
-}
-
-#background{
-    position: relative;
-    width: 1440px;
-    height: 1000px;
-    margin-bottom: 30ex;
-    background-image: url('../images/Group+154.jpg');
-    background-position: center;
+    min-height: 100vh;
+    background-image: url(../images/cosmetics-modern-colorful-surface.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
-img{
-    width: 1440px;
-    height: 537px;
-    position: relative;
-}
-
-#emptyBox{
-    height: 280px;
-    padding: 32px 24px;
-    background-color: #fff;
-    border-radius: 16px;
-    position: absolute;
-    top: 55ex;
-    left: 5em;
-}
-
-#question{
-    color: #112211;
-    font-size: 20px;
-    margin-bottom: 25px;
-    margin-left: 32px;
-}
-
-#showAll , #addButton{
-    position: relative;
-    width: 230px;
-    height: 48px;
-    border: 1px solid #fff;
-    padding: 4px 4px;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: #8DD3BB;
-    margin-left: 24px;
-  
-  }
-
-  #buttonSec{
-display: flex;
-flex-direction: row;
-  }
-
-  #addIcon, #ticketButton{
-    font-size: 18px;
-    color: #FAFBFC;
-    margin-right: 5px;
-  }
-
-  #dropdownContainer:hover  #userDropdown {
-    display: block;
-  }
 
 .container {
     width: 420px;

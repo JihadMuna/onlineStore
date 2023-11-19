@@ -1,7 +1,7 @@
 
 import { createCards } from '../js/createCards.js';
-// import { addToCart ,updateCartCount  } from '../js/cart.js';
-import { getUser ,updateSpecificPerfume } from "./getterAndSetter.js";
+import { addToCart  } from '../js/cart.js';
+import { getUser ,updateSpecificPerfume,updatePerfumeArr , getAllPerfume } from "./getterAndSetter.js";
 
 const user = getUser();
 console.log(user);
@@ -19,6 +19,7 @@ console.log(user);
     
             const res = await result.json();
             console.log(res);
+            updatePerfumeArr(res);
             displayPerfume(res);
         } catch (err) {
             console.error(err);
@@ -63,54 +64,30 @@ console.log(user);
             }
               );
       });
-    
-    }
 
-//     document.addEventListener("DOMContentLoaded", function() {
-      
-//       document.querySelector("#linkFourthItem")&& document.querySelector("#linkFourthItem").addEventListener('click', function(event) {
-//         event.preventDefault();
-//         if(!(JSON.parse(localStorage.getItem('carts')))){
-//           alert("The cart is Empty");
-//         }
-//         else{
-//          location.href = "cart.html" ;
-//         }
-//       });
-      
-//   });
-
-
-  
-
-  document.addEventListener("DOMContentLoaded", function() {
-   
       const addToCartButtons = document.querySelectorAll(".addToCart");
+      console.log(addToCartButtons);
        addToCartButtons.forEach((button, index) => {
         button.addEventListener("click", (e) => {
           e.preventDefault();
-          console.log("clicked");
-          addToCart();
-          // updateCartCount((flights[index].id)-1);
-          
+          console.log(items[e.target.id]);
+          addToCart(items[e.target.id]);      
           location.href = "cart.html" ;
         });
       });
       
+    
+    }
+
+  document.addEventListener("DOMContentLoaded", function() {
+   
+    
     });
     
   if(document.querySelector("#showAll")){
     document.querySelector("#showAll").addEventListener('click', function(event) {
       event.preventDefault();
       displayPerfume(flights);
-    })
-    // if(user.isAdmin){
-    //   const addButton = document.querySelector("#addButton");
-    //   addButton.style.display = "block";
-    // }
-    document.querySelector("#addButton").addEventListener('click', function(event) {
-      event.preventDefault();
-    //   location.href="addFlight.html";
     })
 
   }
