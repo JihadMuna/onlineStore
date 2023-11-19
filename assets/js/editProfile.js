@@ -11,6 +11,7 @@ const img = document.getElementById('profileImg');
 
 // Set input values or placeholders
 username.value = user.username || "";
+password.value = user.password || "";
 age.value = user.age || "";
 gender.value = user.gender || "";
 phoneNumber.value = user.phonenumber || "";

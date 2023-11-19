@@ -44,13 +44,13 @@ function createHeader(){
     linkFirstItem.style.textDecoration = "none";
     linkFirstItem.style.color = "#FAFBFC";
     const flightIcon = document.createElement("i");
-    flightIcon.className = "fa fa-plane";
+    flightIcon.className = "fas fa-search";
     flightIcon.style.fontSize= "24px";
     flightIcon.style.marginRight = "4px";
    
     
     const findFlightSpan = document.createElement("span");
-    findFlightSpan.textContent= "Find Flight";
+    findFlightSpan.textContent= "Find Perfume";
     findFlightSpan.style.fontSize = "14px";
     findFlightSpan.style.fontWeight = "500";
     
@@ -100,12 +100,12 @@ function createHeader(){
     secondItem.style.marginRight = "32px";
 
     const favIcon = document.createElement("i");
-    favIcon.className = "fas fa-ticket-alt";
+    favIcon.className = "fa fa-history";
     favIcon.style.fontSize= "24px";
     favIcon.style.marginRight = "7px";
 
     const favoriteSpan = document.createElement("span");
-    favoriteSpan.textContent = "My Tickets";
+    favoriteSpan.textContent = "Order History";
     favoriteSpan.style.fontSize = "14px";
     favoriteSpan.style.fontWeight = "500";
     
