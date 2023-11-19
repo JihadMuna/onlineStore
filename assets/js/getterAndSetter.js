@@ -1,7 +1,7 @@
 
 export function getUser() {
     const userJSON = localStorage.getItem('currUser');
-    return JSON.parse(userJSON) || userData;
+    return JSON.parse(userJSON) || [];
 }
   
 export function updateUser(currUser) {

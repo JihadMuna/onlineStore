@@ -28,8 +28,6 @@ console.log(user);
     
     fetchedProducts();
 
-
-
     export function displayPerfume(items) {
         perfumeList.innerHTML = "";
         items.forEach((perfume, index) => {
@@ -50,8 +48,8 @@ console.log(user);
     editButton.forEach(editBtn => {
       editBtn.addEventListener('click', (e) => {
        e.preventDefault();
+       console.log(editBtn.id);
        editFunction(items[editBtn.id]);
-     
       }
         );
   });
@@ -79,10 +77,6 @@ console.log(user);
     
     }
 
-  document.addEventListener("DOMContentLoaded", function() {
-   
-    
-    });
     
   if(document.querySelector("#showAll")){
     document.querySelector("#showAll").addEventListener('click', function(event) {
@@ -92,7 +86,6 @@ console.log(user);
 
   }
 
-//   displayPerfume(flights); 
     
 
 // delete product function
@@ -106,6 +99,7 @@ const deleteFunction = async(id)=>{
 
         const result = await response.json();
         console.log(result);
+        location.reload()
 
            } catch (error) {
       console.log(error);
