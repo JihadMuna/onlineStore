@@ -48,6 +48,7 @@ export function createCards(isCart , arr  , index ,isAdmin){
     logo.alt = "perfume pic";
     
     middleSec.className = "perfume-details";
+    middleSec.id = `card${index}`;
 
     perfumeName.className = "perfumeName";
     perfumeName.id = index;
@@ -63,17 +64,19 @@ export function createCards(isCart , arr  , index ,isAdmin){
 
     
     downSec.className = "button-sec";
-    deleteButton.id = "deleteButton";
+    deleteButton.className = "deleteButton";
+    deleteButton.id = arr.id;
     deleteButton.textContent= "X";
-    editButton.id = "editButton";
+    editButton.className = "editButton";
     editButton.textContent= "Edit";
+    editButton.id = arr.id;
     // deleteButton.className = "far fa-heart";
     cancelButton.textContent = "-";
     cancelButton.className = "cancelButton";
-    cancelButton.id = index;
+    cancelButton.id = arr.id;
     
     addToCartButton.textContent = "Add To Cart";
-    addToCartButton.id = index;
+    addToCartButton.id = arr.id;
     addToCartButton.className = "addToCart";
     //================================================
 

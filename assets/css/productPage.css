@@ -14,13 +14,15 @@
     background-repeat: no-repeat;
 }
 
-#mainHeader{
+
+#header{
+    width: 1440px;
+    height: 87px;
+    background-color: black;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: black;
-    width: 100%;
-    height: 80px;
+    justify-content: space-between;
+    padding: 21px 104px;
 }
 
 .productContainer {
