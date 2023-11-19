@@ -48,9 +48,11 @@ editProfileForm.addEventListener('submit', function (event) {
             return response.json();
         })
         .then(data => {
-            updateUser(updateUser);
+            updateUser(data);
             console.log(data);
+            console.log(getUser());
             alert('Profile updated successfully!');
+            // location.href = "dashboard.html";
         })
         .catch(error => {
             console.error('Profile update failed:', error.message);

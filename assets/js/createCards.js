@@ -18,7 +18,7 @@ export function createCards(isCart , arr  , index ,isAdmin){
     decreaseButton.className = "decrease-button";
     decreaseButton.textContent = "-";
     decreaseButton.type = "button";
-    decreaseButton.id=index;
+    decreaseButton.id= index;
 
   
     const numPerfumeInput = document.createElement("input");
@@ -32,7 +32,7 @@ export function createCards(isCart , arr  , index ,isAdmin){
     increaseButton.className = "increase-button";
     increaseButton.textContent = "+";
     increaseButton.type = "button";
-    increaseButton.id=index;
+    increaseButton.id= index;
   
     const downSec = document.createElement("section");
     const deleteButton = document.createElement("button");
@@ -69,14 +69,14 @@ export function createCards(isCart , arr  , index ,isAdmin){
     deleteButton.textContent= "X";
     editButton.className = "editButton";
     editButton.textContent= "Edit";
-    editButton.id = arr.id;
+    editButton.id = index;
     // deleteButton.className = "far fa-heart";
     cancelButton.textContent = "-";
     cancelButton.className = "cancelButton";
-    cancelButton.id = arr.id;
+    cancelButton.id = index;
     
     addToCartButton.textContent = "Add To Cart";
-    addToCartButton.id = arr.id;
+    addToCartButton.id = index;
     addToCartButton.className = "addToCart";
     //================================================
 
@@ -103,8 +103,6 @@ export function createCards(isCart , arr  , index ,isAdmin){
     perfumeName.style.marginBottom = "16px";
     perfumeName.style.position ="relative";
     perfumeName.style.fontWeight = '600';
-
-    // brandName.style.
 
 
     numPerfume.style.display = "flex";

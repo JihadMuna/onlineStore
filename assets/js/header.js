@@ -1,7 +1,7 @@
-import { getUser } from "./getterAndSetter.js";
+import { getUser, updateUser } from "./getterAndSetter.js";
 
 const user = getUser();
-
+console.log(user);
 function createHeader(){
    
     const header = document.createElement("section");
@@ -180,6 +180,7 @@ function createHeader(){
 
     option2.addEventListener('click' , (e) =>{
         e.preventDefault();
+        localStorage.clear();
         location.href = "index.html";
     })
     
