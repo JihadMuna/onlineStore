@@ -224,7 +224,7 @@ if(document.getElementById("book-button")){
     updateUser(user);
     updatePastOrders(user.id, newOrder);
     localStorage.setItem('carts', JSON.stringify([]));
-    // location.href ="dashboard.html";
+    location.href ="displayOrders.html";
   });
      
 }
