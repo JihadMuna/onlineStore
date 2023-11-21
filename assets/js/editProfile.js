@@ -52,7 +52,7 @@ editProfileForm.addEventListener('submit', function (event) {
             console.log(data);
             console.log(getUser());
             alert('Profile updated successfully!');
-            // location.href = "dashboard.html";
+            location.href = "dashboard.html";
         })
         .catch(error => {
             console.error('Profile update failed:', error.message);
