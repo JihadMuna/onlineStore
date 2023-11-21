@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const Size = document.getElementById("perfumeSize");
     const Rate = document.getElementById("perfumeRate");
     const Price = document.getElementById("perfumePrice");
-    const Reviews = document.getElementById("perfumeReviews");
+    const img = document.getElementById("perfumeImage");
 
     Brand.textContent = perfume.brand;
     Name.textContent = perfume.name;
     Size.textContent = perfume.size;
     Rate.textContent = perfume.rate;
     Price.textContent = perfume.price;
-  
+    img.src = perfume.image;
 
 
 });
