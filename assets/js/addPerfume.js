@@ -29,7 +29,9 @@ addPerfumeForm.addEventListener('submit', async (e) => {
         console.log(response.status);
 
         const result = await response.json();
-        console.log(result);
+
+        location.href = 'dashboard.html';
+
 
     } catch (error) {
         console.log(error);

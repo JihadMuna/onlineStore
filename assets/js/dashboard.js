@@ -1,10 +1,15 @@
 
 import { createCards } from '../js/createCards.js';
-import { addToCart  } from '../js/cart.js';
-import { getUser ,updateSpecificPerfume,updatePerfumeArr , getAllPerfume } from "./getterAndSetter.js";
+import { addToCart} from '../js/cart.js';
+import {createSearchBar} from '../js/searchBar.js';
+import { getUser ,updateSpecificPerfume,updatePerfumeArr , getAllPerfume ,getCart } from "./getterAndSetter.js";
 
 const user = getUser();
+const perfumes =getAllPerfume();
 console.log(user);
+const cart = getCart();
+
+
 
     const url = "https://6555dc0584b36e3a431e8028.mockapi.io";
 
@@ -30,10 +35,17 @@ console.log(user);
 
     export function displayPerfume(items) {
         perfumeList.innerHTML = "";
+        
         items.forEach((perfume, index) => {
-
-              createCards(false , perfume , index , user.isAdmin
-                );
+          if(cart){
+            const findIndex = cart.findIndex(c => c.id == perfume.id);
+            if(findIndex == -1){
+              createCards(false , perfume , index , user.isAdmin);
+            }
+          }
+          else{
+            createCards(false , perfume , index , user.isAdmin);
+          }
         });
         const cards = document.querySelectorAll(".perfume-details");
         const deleteButton = document.querySelectorAll(".deleteButton");
@@ -57,6 +69,7 @@ console.log(user);
             card.addEventListener('click', (e) => {
              e.preventDefault();
              const cardId = card.id.slice(4);
+             console.log(`spe id ${cardId}`);
              updateSpecificPerfume(items[cardId]);
              location.href = "productPage.html";
             }
@@ -68,25 +81,31 @@ console.log(user);
        addToCartButtons.forEach((button, index) => {
         button.addEventListener("click", (e) => {
           e.preventDefault();
-          console.log(items[e.target.id]);
-          addToCart(items[e.target.id]);      
-          location.href = "cart.html" ;
+          console.log(e.target.id);
+          console.log(perfumes);
+         addToCart(items[e.target.id] ,e.target.id);      
+        location.href = "cart.html" ;
         });
       });
       
     
     }
 
-    
-  if(document.querySelector("#showAll")){
-    document.querySelector("#showAll").addEventListener('click', function(event) {
+
+  document.addEventListener("DOMContentLoaded", function() {
+      
+    document.querySelector("#linkFourthItem")&& document.querySelector("#linkFourthItem").addEventListener('click', function(event) {
       event.preventDefault();
-      displayPerfume(flights);
-    })
-
-  }
-
+      if(!(JSON.parse(localStorage.getItem('carts')))){
+        alert("The cart is Empty");
+      }
+      else{
+       location.href = "cart.html" ;
+      }
+    });
     
+});
+
 
 // delete product function
 const deleteFunction = async(id)=>{
@@ -124,11 +143,17 @@ const editFunction = async (product)=>{
   closeForm.textContent = 'x';
   closeForm.classList.add('closeForm')
   let editNameInput = document.createElement("input");
+  editNameInput.id = "editNameInput";
   let editBrandInput = document.createElement("input");
+  editBrandInput.id = "editBrandInput";
   let editSizeInput = document.createElement("input");
+  editSizeInput.id = "editSizeInput";
   let editPriceInput = document.createElement("input");
+  editPriceInput.id ="editPriceInput";
   let editImageInput = document.createElement("input");
+  editImageInput.id ="editImageInput";
   let submitEdit = document.createElement("input");
+  submitEdit.id = 'submitBtn';
   editNameInput.value = product.name;
   editBrandInput.value = product.brand;
   editSizeInput.value = product.size;

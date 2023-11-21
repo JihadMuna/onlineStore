@@ -29,3 +29,43 @@ export function updatePerfumeArr(perfumes) {
     const perfumeJSON = JSON.stringify(perfumes);
     localStorage.setItem('perfumes', perfumeJSON);
  }
+
+
+
+export function getCart() {
+    const cartJSON = localStorage.getItem('carts');
+    return JSON.parse(cartJSON) || [];
+}
+
+
+export function updateCart(cart) {
+    const carts = getCart();
+    const findIndex = carts.findIndex(c => c.id == cart.id);
+    if(findIndex == -1)
+    {
+        const cartJSON = JSON.stringify(cart);
+        localStorage.setItem('carts', cartJSON);
+    }  
+  
+  }
+ 
+ export function getPastOrders() {
+    const orderJSON = localStorage.getItem('orders');
+    return JSON.parse(orderJSON) || [];
+}
+  
+export function updateOrders(order) {
+    const orderJSON = JSON.stringify(order);
+    localStorage.setItem('orders', orderJSON);
+ }
+
+
+ export function getNumOrders() {
+    const orderNumJSON = localStorage.getItem('orderNum');
+    return parseInt(orderNumJSON) || 0;
+}
+  
+export function updateNumOrder(order) {
+    const orderNumJSON = order;
+    localStorage.setItem('orderNum', parseInt(orderNumJSON));
+ }

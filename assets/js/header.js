@@ -29,8 +29,8 @@ function createHeader(){
     logo.id = "LogoPic";
     logo.src ="./assets/images/logo-02.png";
     logo.alt = "logo img";
-    logo.style.width = "110.36px";
-    logo.style.height = "36px";
+    logo.style.width = "150px";
+    logo.style.height = "50px";
 
 
     const firstItem = document.createElement("section");
@@ -87,7 +87,7 @@ function createHeader(){
     cartCountSpan.style.display = "none"; 
 
     const linkSecondItem = document.createElement("a");
-    linkSecondItem.href = "myFlights.html";
+    linkSecondItem.href = "displayOrders.html";
     linkSecondItem.style.textDecoration = "none";
     linkSecondItem.style.color = "#FAFBFC";
     linkSecondItem.id = "linkSecondItem";
@@ -210,7 +210,10 @@ function createHeader(){
         });
     });
 
-   
+    middleSec.addEventListener('click', (e)=>{
+        e.preventDefault();
+        location.href = 'dashboard.html';
+    })
 
 //==================================================================
   
