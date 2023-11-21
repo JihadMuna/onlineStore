@@ -12,7 +12,7 @@ export function updateUser(currUser) {
 
  export function getSpecificPerfume() {
     const perfumeJSON = localStorage.getItem('perfume');
-    return JSON.parse(perfumeJSON) || [];
+    return JSON.parse(perfumeJSON) || {};
 }
   
 export function updateSpecificPerfume(specificPerfume) {

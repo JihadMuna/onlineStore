@@ -26,13 +26,14 @@ function displayTotalPrice(cart) {
 }
 
 
- function addToCart(perfume , index) {
+ function addToCart(perfume , index ,isSpecific) {
     console.log(perfume);
     carts.push(perfume);
-    perfumes.splice(index,1);
-    updatePerfumeArr(perfumes);
-    updateCart(carts);
-
+    if(!isSpecific){
+      perfumes.splice(index,1);
+      updatePerfumeArr(perfumes);
+    }
+   updateCart(carts);
   }
  
   function updateCartDisplay() {
@@ -204,7 +205,6 @@ if(document.getElementById("book-button")){
   confirmButton.addEventListener("click", () => {
     popup.style.display = "none";
     alert("Booking confirmed!");
-    // updateMyFlights(carts);
     carts.forEach((cart) =>{
       const index = perfumes.findIndex(flight => flight.id == cart.id);
       if(index != -1){
@@ -224,7 +224,7 @@ if(document.getElementById("book-button")){
     updateUser(user);
     updatePastOrders(user.id, newOrder);
     localStorage.setItem('carts', JSON.stringify([]));
-    location.href ="dashboard.html";
+    // location.href ="dashboard.html";
   });
      
 }
