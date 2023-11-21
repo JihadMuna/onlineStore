@@ -74,7 +74,7 @@ async function fetchPastOrders(userId) {
     function displayOrders(pastOrders) {
      
         const h1 = document.createElement('h1');
-        h1.textContent= `You have ${getNumOrders()} orders`; 
+        h1.textContent= `You have ${pastOrders.length} orders`; 
         h1.style.marginBottom ='50px';
         h1.style.color ='#fafbfc';
         const ordersContainer = document.getElementById('orders-container');
