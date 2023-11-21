@@ -83,7 +83,7 @@ const cart = getCart();
           e.preventDefault();
           console.log(e.target.id);
           console.log(perfumes);
-         addToCart(items[e.target.id] ,e.target.id);      
+         addToCart(items[e.target.id] ,e.target.id ,false);      
         location.href = "cart.html" ;
         });
       });

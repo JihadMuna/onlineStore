@@ -1,6 +1,7 @@
-import { getUser } from "./getterAndSetter.js";
+import { getUser ,getPastOrders ,getNumOrders} from "./getterAndSetter.js";
 
 const user = getUser();
+const orders = getPastOrders();
 
 async function fetchPastOrders(userId) {
     const apiUrl = `https://6555db6984b36e3a431e7e7b.mockapi.io/users/${userId}`; 
@@ -47,7 +48,7 @@ async function fetchPastOrders(userId) {
             productNumPerfumes.textContent = `Quantity: ${item.NumPerfumes}`;
 
             const productPrice = document.createElement('p');
-            productPrice.textContent = `$${item.price.toFixed(2)}`;
+            productPrice.textContent = `$${item.price}`;
 
             productInfo.appendChild(productName);
             productInfo.appendChild(productNumPerfumes);
@@ -60,7 +61,7 @@ async function fetchPastOrders(userId) {
         });
 
         const totalPrice = document.createElement('p');
-        totalPrice.textContent = `Total Price: $${order.totalPrice.toFixed(2)}`;
+        totalPrice.textContent = `Total Price: $${order.totalPrice}`;
         totalPrice.id = 'totalPrice';
         totalPrice.style.fontWeight = '600';
         orderCard.appendChild(orderHeader);
@@ -71,9 +72,9 @@ async function fetchPastOrders(userId) {
     }
 
     function displayOrders(pastOrders) {
-        
+     
         const h1 = document.createElement('h1');
-        h1.textContent= `You have ${pastOrders.length} orders`; 
+        h1.textContent= `You have ${getNumOrders()} orders`; 
         h1.style.marginBottom ='50px';
         h1.style.color ='#fafbfc';
         const ordersContainer = document.getElementById('orders-container');
@@ -82,6 +83,7 @@ async function fetchPastOrders(userId) {
             const orderCard = createOrderCard(order);
             ordersContainer.appendChild(orderCard);
         });
+ 
     }
 
      window.onload = fetchPastOrders(user.id);

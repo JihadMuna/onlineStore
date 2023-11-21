@@ -31,8 +31,129 @@
     width: 80%;
     height:100vh;
 }
+/* #background {
+    position: relative;
+    height: 100vh;
+    background-image: url('../images/Group+154.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+/* 
+#mainHeader {
+    width: 100%;
+    height: 87px;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+} */
+
+.productContainer {
+    margin-top: 150px;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
 
 .perfume-details {
+    display: flex;
+    border: 1px solid rgb(233, 235, 235);
+    border-radius: 10px;
+    background-color: white;
+    height: 60%;
+    width: 80%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#perfumeImage {
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+    margin-right: 20px;
+}
+
+.details {
+   
+    text-align: left;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+
+}
+
+#perfumeBrand {
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#perfumeName {
+    color: #555;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+#perfumeSize,
+#perfumePrice {
+    color: #777;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+#perfumeSize span,
+#perfumePrice span {
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+#perfumeRate {
+    color: #ffc107;
+    font-size: 20px;
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.fa {
+    color: #ffc107;
+    margin-right: 5px;
+   
+}
+
+.checked {
+    color: #ffc107;
+}
+.perfume-details img {
+    max-width: 400px;
+    max-height: 400px;
+}
+
+
+#addToCart{
+
+    height: 48px;
+    border: 1px solid rgb(24 25 36);
+    background-color: rgb(24 25 36);
+    color: #fafbfc;
+    font-size: 14px;
+    padding: 10px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+/* .perfume-details {
     display: flex;
     border: 1px solid rgb(233, 235, 235);
     border-radius: 10px;
@@ -42,9 +163,7 @@
     box-shadow: 0 0px 5px 0px #cbc0c0;
 }
 
-.perfume-details img {
-    max-width: 400px;
-}
+
 
 .details {
     padding-top: 50px;
@@ -76,7 +195,7 @@
 
 .checked {
     color: orange;
-  }
+  } */
 
 
   /* Review Psge Style */
@@ -94,7 +213,8 @@
 h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    text-align: center;
+    /* text-align: center; */
+    color: #f6f6f9;
 }
 
 .description {
@@ -141,6 +261,7 @@ h2 {
     transform: scale(1.01);
     background-color: #090921;
     box-shadow: 0 0px 5px 0px #cbc0c0;
+    color: #f6f6f9;
 }
 
 .top {
