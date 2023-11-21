@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url(/assets/images/Group+154.jpg);
+    background-image: url("/assets/images/Group+154.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -18,7 +18,8 @@ body{
 
 
 .container{
-    width: 420px;
+    width: 500px;
+    height: 400px;
     background-color: transparent;
     border: 2px solid rgba(255,255,255,.2);
     backdrop-filter: blur(20px);
