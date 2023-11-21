@@ -8,16 +8,43 @@
 }
 
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     background-image: url("/assets/images/Group+154.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
+#header{
+    min-width: 1000px;
+    height: 100px;
+    background-color: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 21px 104px;
+}
 
+
+#firstItem , #thirdItem , #secondItem{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+#list {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+   
+}
+#main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+   
+}
 .container{
     width: 420px;
     background-color: transparent;

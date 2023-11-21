@@ -7,33 +7,36 @@
     <title>Perfume Store</title>
   </head>
   <body>
-<section class="container">
-    <h2>Add Perfume</h2>
-    <form action="#" id="addPerfumeForm">
+    <header id="mainHeader"></header>
+    <main id="main">
+    <section class="container">
+        <h2>Add Perfume</h2>
+        <form action="#" id="addPerfumeForm">
+            <section class="input-box">
+          <input type="text" id="name" placeholder="Perfume Name"/>
+        </section>
+
+    <section class="input-box">
+          <input type="text" id="brand" placeholder="Perfume Brand"/>
+        </section>
+
         <section class="input-box">
-      <input type="text" id="name" placeholder="Perfume Name"/>
+          <input type="number" id="size" placeholder="Perfume Size (ML)"/>
+        </section>
+
+        <section class="input-box">
+          <input type="number" step="0.01" id="price" placeholder="Perfume Price"/>
+        </section>
+
+        <section class="input-box">
+          <input type="url" id="image" placeholder="Perfume image (Url)"/>
+        </section>
+
+          <input type="submit" class="submit-btn"></input>
+        </form>
     </section>
-
-<section class="input-box">
-      <input type="text" id="brand" placeholder="Perfume Brand"/>
-    </section>
-
-    <section class="input-box">
-      <input type="number" id="size" placeholder="Perfume Size (ML)"/>
-    </section>
-
-    <section class="input-box">
-      <input type="number" step="0.01" id="price" placeholder="Perfume Price"/>
-    </section>
-
-    <section class="input-box">
-      <input type="url" id="image" placeholder="Perfume image (Url)"/>
-    </section>
-
-      <input type="submit" class="submit-btn"></input>
-    </form>
-</section>
-
-    <script src="addPerfume.js"></script>
+  </main>
+   <script  type="module"src="assets/js/header.js"></script>
+    <script type="module" src="addPerfume.js"></script>
   </body>
 </html>

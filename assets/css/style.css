@@ -10,9 +10,10 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url(/assets/images/technology-abstract-background-with-particle-lines.jpg);
+    background-image: url(/assets/images/Group+154.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 

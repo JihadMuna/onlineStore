@@ -11,7 +11,7 @@ export function createCards(isCart , arr  , index ,isAdmin){
     const price = document.createElement("h4");
   //  const perfumeSize = document.createElement("h4");
     const numPerfume = document.createElement("section");
-    numPerfume.className = "travelers-control";
+    numPerfume.className = "perfumes-control";
 
    
     const decreaseButton = document.createElement("button");
@@ -22,12 +22,14 @@ export function createCards(isCart , arr  , index ,isAdmin){
 
   
     const numPerfumeInput = document.createElement("input");
-    numPerfumeInput.className = "travelers-input";
+    numPerfumeInput.className = "perfumes-input";
     numPerfumeInput.type = "number";
     numPerfumeInput.min = 1;
     numPerfumeInput.max = 10;
     numPerfumeInput.value = 1;
-   
+    arr.NumPerfumes = 1;
+    numPerfumeInput.style.textAlign = 'center';
+
     const increaseButton = document.createElement("button");
     increaseButton.className = "increase-button";
     increaseButton.textContent = "+";
@@ -106,7 +108,10 @@ export function createCards(isCart , arr  , index ,isAdmin){
 
 
     numPerfume.style.display = "flex";
-    numPerfume.style.width = "200px";
+    numPerfume.style.alignItems ="center";
+    numPerfume.style.justifyContent = "center";
+    numPerfume.style.marginBottom = '20px';
+    numPerfume.style.width = "300px";
     decreaseButton.style.width = "30px";
     decreaseButton.style.height = "30px";
     decreaseButton.style.backgroundColor = "#FF8682";
@@ -138,10 +143,11 @@ export function createCards(isCart , arr  , index ,isAdmin){
     deleteButton.style.width = "48px";
     deleteButton.style.height = "48px";
     deleteButton.style.marginRight = "16px";
-    deleteButton.style.border = "1px solid #8DD3BB";
     deleteButton.style.padding = "4px 4px";
     deleteButton.style.borderRadius = "4px";
-    deleteButton.style.color = "#4C4850";
+    deleteButton.style.color = "#rgb(24 25 36)";
+    deleteButton.style.fontSize = '16px';
+    deleteButton.style.fontWeight = '600';
    
     cancelButton.textContent = "-";
     cancelButton.className = "cancelButton";
@@ -149,19 +155,19 @@ export function createCards(isCart , arr  , index ,isAdmin){
 
     addToCartButton.style.width = "300px";
     addToCartButton.style.height = "48px";
-    addToCartButton.style.border = "1px solid #8DD3BB";
-    addToCartButton.style.backgroundColor = "#8DD3BB";
-    addToCartButton.style.color = "#112211";
+    addToCartButton.style.border = "1px solid rgb(24 25 36)";
+    addToCartButton.style.backgroundColor = "rgb(24 25 36)";
+    addToCartButton.style.color = "#fafbfc";
     addToCartButton.style.fontSize = "14px";
     addToCartButton.style.padding = "4px 4px";
     addToCartButton.style.borderRadius = "4px";
     addToCartButton.style.fontWeight = "600";
 
-    editButton.style.width = "100px";
+    editButton.style.width = "230px";
     editButton.style.height = "48px";
-    editButton.style.border = "1px solid #8DD3BB";
-    editButton.style.backgroundColor = "#8DD3BB";
-    editButton.style.color = "#112211";
+    editButton.style.border = "1px solid rgb(24 25 36)";
+    editButton.style.backgroundColor = "rgb(24 25 36)";
+    editButton.style.color = "#fafbfc";
     editButton.style.fontSize = "14px";
     editButton.style.padding = "4px 4px";
     editButton.style.borderRadius = "4px";
@@ -178,9 +184,10 @@ export function createCards(isCart , arr  , index ,isAdmin){
     middleSec.style.display = "flex";
     middleSec.style.flexDirection = "column";
     middleSec.style.height = '300px';
-    middleSec.style.padding = '20px';
+    middleSec.style.padding = '10px';
     middleSec.style.justifyContent = "space-between";
     middleSec.style.alignItems = "center";
+
 
 
     list.style.display = "flex";
@@ -206,6 +213,7 @@ export function createCards(isCart , arr  , index ,isAdmin){
             downSec.appendChild(addToCartButton);
         }
         else{
+            downSec.appendChild(numPerfume);
             downSec.appendChild(cancelButton); 
         }
     }

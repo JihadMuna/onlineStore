@@ -8,14 +8,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url(../images/cosmetics-modern-colorful-surface.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: #0c0c0e;
 }
 #header{
-    width: 1440px;
-    height: 87px;
-    background-color: black;
+    min-width: 1000px;
+    height: 100px;
+    background-color: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -46,10 +44,10 @@ justify-content: center;
 
 .container {
     width: 420px;
-    background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
+    background-color: #fafbfc;
+    border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 10px rgba(173, 172, 172, 0.2);
     color: white;
     padding: 30px 40px;
     border-radius: 10px;
@@ -58,6 +56,7 @@ justify-content: center;
 .container h2 {
     font-size: 36px;
     text-align: center;
+    color: rgb(24 25 36);
 }
 
 .container .input-box {
@@ -73,20 +72,20 @@ justify-content: center;
     background: transparent;
     border: none;
     outline: none;
-    border: 2px solid rgba(255, 255, 255, .2);
+    border: 1px solid rgb(81, 83, 105);
     border-radius: 40px;
     font-size: 16px;
     padding: 20px 45px 20px 20px;
-    color: white;
+    color: rgb(24 25 36);
 }
 
 .input-box input::placeholder,
 .input-box select::placeholder {
-    color: white;
+    color: rgb(24 25 36);
 }
 
 option{
-    background-color: #dfa3c5;
+    /* background-color: #dfa3c5; */
     border-radius: 10px;
 }
 
@@ -100,19 +99,19 @@ option{
 .btn {
     width: 100%;
     height: 45px;
-    background: #fff;
+    background: rgb(24 25 36);
     border: none;
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10 rgba(0, 0, 0, .2);
     cursor: pointer;
-    color: #333;
+    color: #fafbfc;
     font-weight: 600;
     margin-top: 15px;
 }
 
 .btn:hover {
-    background: #dfa3c5;
-    border-color: rgb(94, 80, 156);
+    background: rgb(148, 150, 175);
+    border-color: rgb(126, 128, 151);
     box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
 }

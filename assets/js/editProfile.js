@@ -25,15 +25,15 @@ editProfileForm.addEventListener('submit', function (event) {
     const userId = user.id;
 
     const payload = {
-        ...user,
+      
         username: username.value,
         password: password.value,
         age: age.value,
         gender: gender.value,
         phonenumber: phoneNumber.value,
-        img: img.value
+        img: img.value,
+        pastOrders:[]
     };
-
     fetch(`https://6555db6984b36e3a431e7e7b.mockapi.io/users/${userId}`, {
         method: 'PUT',
         headers: {
@@ -58,4 +58,18 @@ editProfileForm.addEventListener('submit', function (event) {
             console.error('Profile update failed:', error.message);
             alert('Profile update failed. Please try again.');
         });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+      
+    document.querySelector("#linkFourthItem")&& document.querySelector("#linkFourthItem").addEventListener('click', function(event) {
+      event.preventDefault();
+      if(!(JSON.parse(localStorage.getItem('carts')))){
+        alert("The cart is Empty");
+      }
+      else{
+       location.href = "cart.html" ;
+      }
+    });
+    
 });

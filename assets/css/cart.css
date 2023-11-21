@@ -2,13 +2,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #0c0c0e;
 }
 
 #header{
     width: 1440px;
     height: 87px;
-    background-color: black;
+    background-color: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,16 +32,25 @@ justify-content: center;
 }
 
 .book-button {
-    background-color: #8DD3BB ;
-    color: #fff;
+    background-color: #fafbfc ;
+    color: rgb(24 25 36);
     padding: 10px 20px;
     border: none;
+    width: 300px;
     border-radius: 5px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 18px;
+    font-weight: 550;
+    
 }
 
 .book-button:hover {
-    background-color: #8DD3BB ;
+    /* background-color: rgb(24 25 36) ;
+    color: #FAFBFC; */
 }
 #buttonSec{
     display: flex;
@@ -59,7 +68,7 @@ justify-content: center;
       }
 
 .popup {
-    display: none;
+   
     position: fixed;
     top: 0;
     left: 0;
@@ -87,7 +96,7 @@ justify-content: center;
 }
 
 .confirm-button {
-    background-color: #8DD3BB ;
+    background-color: rgb(24 25 36) ;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -96,7 +105,7 @@ justify-content: center;
 }
 
 .confirm-button:hover {
-    background-color: #8DD3BB ;
+    background-color: rgb(24 25 36) ;
 }
 
 #searchSec{
@@ -110,5 +119,21 @@ justify-content: center;
   width: 1440px;
    display: flex;
    align-items: center;
+   justify-content: center;
+}
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Webkit */
+    margin: 0; /* Removes default margin */
+}
+
+#book{
+   position: sticky;
+   bottom: 0;
+   display: flex;
    justify-content: center;
 }
