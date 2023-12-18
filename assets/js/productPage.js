@@ -17,5 +17,4 @@ document.addEventListener('DOMContentLoaded', function () {
     Price.textContent = perfume.price;
     Reviews.textContent = perfume.reviews;
 
-
 });

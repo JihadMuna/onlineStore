@@ -86,8 +86,6 @@ console.log(user);
 
   }
 
-    
-
 // delete product function
 const deleteFunction = async(id)=>{
   console.log(id);

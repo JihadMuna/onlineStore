@@ -1,5 +1,3 @@
-
-
 export function createCards(isCart , arr  , index ,isAdmin){
     const list = document.querySelector("#list");
     const cardSec = document.createElement("section");

@@ -2,11 +2,12 @@ import { getUser, updateUser } from "./getterAndSetter.js";
 
 const user = getUser();
 console.log(user);
-function createHeader(){
-   
-    const header = document.createElement("section");
 
+function createHeader(){
+   // creat dynamic header
+    const header = document.createElement("section");
     header.id = "header";
+    // creat left section
     const rightSec = document.createElement("section");
     rightSec.id = "rightSec";
     rightSec.style.height = "24px";
@@ -15,6 +16,7 @@ function createHeader(){
     rightSec.style.flexDirection="row";
     rightSec.style.alignItems="center";
     rightSec.style.justifyContent = "center";
+
     const leftSec = document.createElement("section");
     leftSec.id = "leftSec";
     leftSec.style.display = "flex";
@@ -23,6 +25,7 @@ function createHeader(){
     leftSec.style.justifyContent = "center";
     leftSec.style.width = "242px";
     leftSec.style.height = "24px";
+
     const middleSec = document.createElement("section");
     middleSec.id = "middleSec";
     const logo =  document.createElement("img");
@@ -51,7 +54,7 @@ function createHeader(){
     
     const findFlightSpan = document.createElement("span");
     findFlightSpan.textContent= "Find Perfume";
-    findFlightSpan.style.fontSize = "14px";
+    findFlightSpan.style.fontSize = "15px";
     findFlightSpan.style.fontWeight = "500";
     
     const linkFourthItem = document.createElement("a");
@@ -71,8 +74,8 @@ function createHeader(){
 
     const cartSpan = document.createElement("span");
     cartSpan.textContent = "Cart";
-    cartSpan.style.fontSize = "14px";
-    cartSpan.style.fontWeight = "500";
+    cartSpan.style.fontSize = "16px";
+    cartSpan.style.fontWeight = "600";
 
  
     const cartCountSpan = document.createElement("span");
